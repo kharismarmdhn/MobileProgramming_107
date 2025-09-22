@@ -1,106 +1,62 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Row and Column',
-      home: Scaffold(
-        appBar: AppBar(title: Text('Row and Column')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // First row of blue boxes
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  KotakKuning(),
-                  SizedBox(width: 20), //jarak antar kotak
-                  KotakKuning(),
-                  SizedBox(width: 20),
-                ],
-              ),
-              SizedBox(height: 20), //jarak antar baris
-              // Second row of purple boxes
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  KotakCyan(),
-                  SizedBox(width: 20), //jarak antar kotak
-                  KotakCyan(),
-                  SizedBox(width: 20),
-                ],
-              ),
-            ],
-          ),
+      debugShowCheckedModeBanner: false,
+      title: 'Music Player UI',
+      theme: ThemeData.dark(),
+      home: const MusicPlayerPage(),
+    );
+  }
+}
+
+class MusicPlayerPage extends StatelessWidget {
+  const MusicPlayerPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Pemutar Musik'),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: const Center(
+        child: Text(
+          'Pemutar Musik',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
-    );
-  }
-}
-
-class KotakKuning extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 195, 255, 0),
-        border: Border.all(color: Colors.black, width: 2),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.favorite,
-            color: const Color.fromARGB(255, 255, 0, 0),
-            size: 40,
-          ),
-          SizedBox(height: 8),
-          Text(
-            "Favorite",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class KotakCyan extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 0, 255, 195),
-        border: Border.all(color: Colors.black, width: 2),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.favorite,
-            color: const Color.fromARGB(255, 255, 0, 0),
-            size: 40,
-          ),
-          SizedBox(height: 8),
-          Text(
-            "Favorite",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-        ],
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
+        color: Colors.black54,
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Expanded(child: Icon(Icons.shuffle, color: Colors.white)),
+            Expanded(child: Icon(Icons.skip_previous, color: Colors.white)),
+            Flexible(
+              flex: 2,
+              fit: FlexFit.tight,
+              child: Icon(
+                Icons.play_circle_fill,
+                color: Colors.white,
+                size: 48,
+              ),
+            ),
+            Expanded(child: Icon(Icons.skip_next, color: Colors.white)),
+            Expanded(child: Icon(Icons.repeat, color: Colors.white)),
+          ],
+        ),
       ),
     );
   }
