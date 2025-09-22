@@ -8,99 +8,55 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Row and Column',
+      title: 'Weather App',
       home: Scaffold(
-        appBar: AppBar(title: Text('Row and Column')),
-        body: Center(
+        appBar: AppBar(
+          title: Text('Weather App'),
+        ), // AppBar dihapus karena tidak ada di gambar
+        body: const Center(
+          // Ubah Center menjadi Container atau SizedBox untuk fleksibilitas
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            // Menggunakan Column untuk menata elemen secara vertikal
             children: [
-              // First row of blue boxes
+              SizedBox(height: 50),
+              Text('Malang', style: TextStyle(fontSize: 30)),
+              SizedBox(height: 20), // Memberikan spasi vertikal
+              Text('25°', style: TextStyle(fontSize: 75)),
+              SizedBox(
+                height: 50,
+              ), // Memberikan spasi vertikal yang lebih besar
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  KotakKuning(),
-                  SizedBox(width: 20), //jarak antar kotak
-                  KotakKuning(),
-                  SizedBox(width: 20),
-                ],
-              ),
-              SizedBox(height: 20), //jarak antar baris
-              // Second row of purple boxes
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  KotakCyan(),
-                  SizedBox(width: 20), //jarak antar kotak
-                  KotakCyan(),
-                  SizedBox(width: 20),
+                  // Kolom untuk Minggu
+                  Column(
+                    children: [
+                      Text('Minggu'),
+                      Icon(Icons.sunny, color: Colors.amber, size: 45),
+                      Text('20°C'),
+                    ],
+                  ),
+                  // Kolom untuk Senin
+                  Column(
+                    children: [
+                      Text('Senin'),
+                      Icon(Icons.cloudy_snowing, color: Colors.grey, size: 45),
+                      Text('23°C'),
+                    ],
+                  ),
+                  // Kolom untuk Selasa
+                  Column(
+                    children: [
+                      Text('Selasa'),
+                      Icon(Icons.cloud, color: Colors.grey, size: 45),
+                      Text('22°C'),
+                    ],
+                  ),
                 ],
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class KotakKuning extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 195, 255, 0),
-        border: Border.all(color: Colors.black, width: 2),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.favorite,
-            color: const Color.fromARGB(255, 255, 0, 0),
-            size: 40,
-          ),
-          SizedBox(height: 8),
-          Text(
-            "Favorite",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class KotakCyan extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 0, 255, 195),
-        border: Border.all(color: Colors.black, width: 2),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.favorite,
-            color: const Color.fromARGB(255, 255, 0, 0),
-            size: 40,
-          ),
-          SizedBox(height: 8),
-          Text(
-            "Favorite",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-        ],
       ),
     );
   }
