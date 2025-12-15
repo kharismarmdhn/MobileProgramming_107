@@ -8,3 +8,8 @@
 | 6 | Widget GridView, ListView, GridView.builder, dan ListView.builder | [Laprak Modul 6](https://github.com/kharismarmdhn/Modul6_Mobile/blob/main/Modul%2006.pdf) | [Program](https://github.com/kharismarmdhn/Modul6_Mobile.git) |
 | 7 | Navigasi Antar Halaman Menggunakan MaterialPageRoute dan Named Route | [Laprak Modul 7](https://github.com/kharismarmdhn/Modul7_Mobile/blob/main/230605110107_Kharisma%20Romadhon_Laporan%20Praktikum%20Md7_Kelas%20E.pdf) | [Program](https://github.com/kharismarmdhn/Modul7_Mobile.git) |
 | 8 | Navigasi Antar Halaman dengan Mengirimkan Argumen Menggunakan Named Route | [Laprak Belum] | [Belum] |
+| 9 | StatefulWidget | [Laprak Belum] | [Belum] |
+| 10 | Desain GUI, Navigasi, dan Integrasi API dengan JSON Serialization di Flutter | [Laprak Belum] | [Belum] |
+| 11 | Manajemen State dengan GetX | [Laprak Belum] | [Belum] |
+| 12 | Akses Lokasi dengan GPS di Flutter | [Laprak Belum] | [Belum] |
+| 13 | Operasi CRUD (Create, Read, Update, Delete) di Flutter dengan REST API | [Laprak Belum] | [Belum] |
